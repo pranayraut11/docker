@@ -1,0 +1,15 @@
+version: '3'
+services:
+  nginx:
+    image: pranayraut11/nginx
+    restart: always
+    ports:
+      - 80:80
+    depends_on:
+      - app
+
+  app:
+    container_name: app
+    image: pranayraut11/samplejavawebsite
+    expose:
+      - 8080
